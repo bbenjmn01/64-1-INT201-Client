@@ -1,6 +1,6 @@
 let products = [
-    { id: 1, price: 10 },
-    { id: 2, price: 5 },
+  { id: 1, price: 10 },
+  { id: 2, price: 5 },
 ];
 
 let newProduct = { id: 3, price: 20 };
@@ -12,7 +12,7 @@ products = [...products, { id: newProduct.id, price: newProduct.price }];
 //destructuring +rest parameter
 
 function getStudentsInClass(instructor, ta, ...students) {
-    return students;
+  return students;
 }
 
 let studentSec2 = getStudentsInClass("Umaporn", "Tisanai", "A", "B", "C");
@@ -30,8 +30,8 @@ console.log(student);
 //     return students;
 // };
 const myFunc = (instructor, ta, ...students) => {
-    let greeting = "Hello";
-    return students;
+  let greeting = "Hello";
+  return students;
 };
 console.log(myFunc("Umaporn", "Tisanai", "A", "B", "C"));
 
@@ -57,12 +57,12 @@ const getClass = () => `INT201`;
 console.log(getClass());
 
 //--------------------------------------------------
-const myFunc = function(instructor = "unknown", numsOfStd = 0) {
-    console.log(instructor);
+const myFunc = function (instructor = "unknown", numsOfStd = 0) {
+  console.log(instructor);
 
-    console.log(numsOfStd);
+  console.log(numsOfStd);
 
-    return instructor;
+  return instructor;
 };
 
 myFunc(5);
