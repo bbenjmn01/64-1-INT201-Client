@@ -33,14 +33,18 @@ let questions = [quest1, quest2, quest3, quest4, quest5];
 
 function play(player, userNumOfQuestions) {
   for (let i = 0; i < userNumOfQuestions; i++) {
+    // random เลขข้อของข้อสอบ
     let randQuestion = Math.floor(Math.random() * TOTAL_QUESTION);
     console.log(`Question #${i + 1}`);
+    // ใส่ข้อสอบข้อที่ได้
     player.choseQuests[i] = questions[randQuestion];
+    // แสดงข้อสอบ
     console.log(questions[randQuestion]);
     let randUserAnswer = Math.floor(Math.random() * 4) + 1;
     console.log(`User answer: ${randUserAnswer}`);
+    // เก็บคำตอบที่ user ตอบ
     player.userAnswers[i] = randUserAnswer;
-
+    // Check คำตอบว่าถูกหรือไม่
     if (player.choseQuests[i].correctAnswer === player.userAnswers[i]) {
       console.log(`correct!`);
       player.correctPoints += 1;

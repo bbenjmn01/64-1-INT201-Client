@@ -7,7 +7,9 @@ function inch2meter(inch) {
   return inch * INCH_TO_METER;
 }
 function getBMI(user) {
+  // แปลง POUND_TO_KG
   let kg = pound2kg(user.weight);
+  // INCH_TO_METER
   let meter = inch2meter(user.height);
   return kg / Math.pow(meter, 2);
 }
@@ -15,7 +17,7 @@ function getBMI(user) {
 users = [
   { id: 1, weight: 40.25, height: 40.75 },
   { id: 2, weight: 36.5, height: 39 },
-  { id: 3, weight: 51, height: 32 }
+  { id: 3, weight: 51, height: 32 },
 ];
 
 for (const user of users) {

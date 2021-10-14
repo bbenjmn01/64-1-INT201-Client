@@ -47,6 +47,10 @@ function stringOps(yourString, userMenu) {
 }
 
 console.log(displayMenu());
-let choseMenu = 2;
-let yourString = "Hello World";
-console.log(stringOps(yourString, choseMenu));
+
+// let choseMenu = 2;
+// let yourString = "Hello World";
+// console.log(stringOps(yourString, choseMenu));
+let yourString = prompt(`${displayMenu()}\n Enter your text string:`);
+let choseMenu = prompt(`${displayMenu()}\n Select menu:`);
+result = stringOps(yourString, choseMenu);
