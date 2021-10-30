@@ -33,10 +33,20 @@ function isBigEnough(element, index, array) {
 let arr1 = [12, 54, 18, 130, 44].every(isBigEnough);
 console.log(`Ex.1 : ${arr1}`); //true
 
+
+
+
+
+
 // Ex.2 ----------------------------------------
 let arr2 = [12, 5, 8, 130, 44];
 let result2 = arr2.every((element) => element >= 10);
 console.log(`Ex.2 : ${result2}`); //false
+
+
+
+
+
 
 // Ex.3 ----------------------------------------
 const isBelowThreshold = (currentValue) => currentValue < 40;
@@ -45,14 +55,24 @@ const arr3 = [1, 30, 39, 29, 10, 13];
 
 console.log(`Ex.3 : ${arr3.every(isBelowThreshold)}`); //true
 
+
+
+
+
+
 // Ex.4 ----------------------------------------
-arr4 = [1, 2, 3, 4, 5];
-// arr4 = [1, 4, 3, 4, 5];
+// arr4 = [1, 2, 3, 4, 5];
+arr4 = [1, 4, 3, 4, 5];
 let result = arr4.every((elem, index, arr) => {
   console.log(`[${arr}] ตำแหน่ง index ที่ ${index} มีค่าเท่ากับ -> ${elem}`);
   return elem < 4;
 });
 console.log(result);
+
+
+
+
+
 
 // Question ----------------------------------------
 function isSubset(array1, array2) {
