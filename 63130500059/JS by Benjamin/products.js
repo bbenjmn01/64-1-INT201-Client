@@ -1,0 +1,58 @@
+export const products = [
+  {
+    product_id: 1001,
+    product_name: "iPhone 13 Pro Max",
+    product_price: 42900,
+    priduct_stock: 0,
+    product_image: "./images/p1001.png",
+  },
+  {
+    product_id: 1002,
+    product_name: "iPhone 13 Pro",
+    product_price: 38900,
+    priduct_stock: 10,
+    product_image: "./images/p1002.png",
+  },
+  {
+    product_id: 1003,
+    product_name: "iPhone 13",
+    product_price: 29900,
+    priduct_stock: 0,
+    product_image: "./images/p1003.png",
+  },
+  {
+    product_id: 1004,
+    product_name: "iPhone 13 Mini",
+    product_price: 25900,
+    priduct_stock: 10,
+    product_image: "./images/p1004.png",
+  },
+  {
+    product_id: 1005,
+    product_name: "iPhone 12 Mini",
+    product_price: 21900,
+    priduct_stock: 10,
+    product_image: "./images/p1005.png",
+  },
+  {
+    product_id: 1006,
+    product_name: "iPhone 12",
+    product_price: 25900,
+    priduct_stock: 10,
+    product_image: "./images/p1006.png",
+  },
+  {
+    product_id: 1007,
+    product_name: "iPhone SE",
+    product_price: 14900,
+    priduct_stock: 10,
+    product_image: "./images/p1007.png",
+  },
+  {
+    product_id: 1008,
+    product_name: "iPhone 11",
+    product_price: 19500,
+    priduct_stock: 10,
+    product_image: "./images/p1008.png",
+  },
+];
