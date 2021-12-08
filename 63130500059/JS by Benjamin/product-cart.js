@@ -1,7 +1,7 @@
-import { CookieUtil } from "./cookie.js";
+import { cartEvents, updateAmount } from "./cart.js";
 
-let cart = [];
-recoveItems();
+cartEvents.recove();
+
 // Cart
 let div_cart = document.querySelector("#cart");
 div_cart.setAttribute("class", "flex items-center");
@@ -16,8 +16,8 @@ div_cart.appendChild(cart_btn);
 
 let cart_amount = document.createElement("span");
 cart_amount.setAttribute("id", "cart-amount");
-cart_amount.setAttribute("class", "p-1 w-16 text-bold text-black text-l");
-cart_amount.textContent = `Bag: ${countItems()}`;
+cart_amount.setAttribute("class", "p-1 w-16 text-bold text-l");
+cart_amount.textContent = `Bag: ${cartEvents.count()}`;
 div_cart.appendChild(cart_amount);
 
 // Delete
@@ -28,42 +28,7 @@ delete_btn.setAttribute(
   "p-1 mx-2 rounded-full text-gray-400 transition duration-500 ease-in-out transform hover:scale-150"
 );
 delete_btn.innerHTML = `<svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12l1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"/></svg>`;
-delete_btn.addEventListener("click", deleteAll);
+delete_btn.addEventListener("click", cartEvents.cancel, updateAmount);
 div_delete.appendChild(delete_btn);
 
-let update_amount = document.querySelector("#cart-amount");
 
-function recoveItems() {
-  if (CookieUtil.get("cart") === null) {
-    CookieUtil.set("cart", JSON.stringify(cart));
-  } else {
-    cart = JSON.parse(CookieUtil.get("cart", JSON.stringify(cart)));
-  }
-}
-
-export function addProduct(event) {
-  let get_id = event.target.parentNode.parentNode.id;
-  let check_id = cart.filter((item) => item.cart_product_id == get_id);
-  if (check_id == false) {
-    cart.push({ cart_product_id: get_id, qty: 1 });
-    console.log(cart);
-  } else {
-    cart[cart.findIndex((item) => item.cart_product_id == get_id)].qty++;
-    console.log(cart);
-  }
-  update_amount.textContent = `Bag: ${countItems()}`;
-  CookieUtil.set("cart", JSON.stringify(cart));
-  console.log(CookieUtil.get("cart"));
-}
-
-function countItems() {
-  let sum = Object.values(cart).reduce((t, { qty }) => t + qty, 0);
-  console.log(`cart amount : ${sum}`);
-  return sum;
-}
-
-function deleteAll() {
-  cart = [];
-  update_amount.textContent = `Bag: ${countItems()}`;
-  CookieUtil.set("cart", JSON.stringify(cart));
-}

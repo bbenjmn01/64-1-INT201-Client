@@ -1,5 +1,5 @@
 import { products } from "./products.js";
-import { addProduct } from "./product-cart.js";
+import { cartEvents, updateAmount } from "./cart.js";
 
 let header = document.querySelector("#header");
 header.setAttribute(
@@ -64,7 +64,7 @@ for (const pd of products) {
       "bg-gray-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-500 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     );
     buy_btn.textContent = "Add to Cart";
-    buy_btn.addEventListener("click", addProduct);
+    buy_btn.addEventListener("click", cartEvents.add, updateAmount);
   } else {
     buy_btn.setAttribute(
       "class",

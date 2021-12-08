@@ -50,6 +50,7 @@ let nav = document.querySelector("nav");
 let menu = document.querySelectorAll(".menu");
 // let svg = document.querySelectorAll("svg");
 let icon = document.getElementsByClassName("icon");
+let amount = document.querySelector("#cart");
 
 if (theme == "dark") {
   darkTheme();
@@ -64,11 +65,9 @@ function toggle_dark_mode() {
   if (checkbox.checked) {
     darkTheme();
     localStorage.setItem("theme", "dark");
-    console.log("Baby shark");
   } else {
     lightTheme();
     localStorage.setItem("theme", "light");
-    console.log("Little star");
   }
 }
 
@@ -84,6 +83,7 @@ function darkTheme() {
   for (const i of icon) {
     i.setAttribute("fill", "#fff");
   }
+  amount.classList.add("text-white");
 }
 
 function lightTheme() {
@@ -98,4 +98,5 @@ function lightTheme() {
   for (const i of icon) {
     i.setAttribute("fill", "#000");
   }
+  amount.classList.remove("text-white");
 }
